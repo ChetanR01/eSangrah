@@ -1,0 +1,23 @@
+{% extends "base.html" %} 
+{% block main %}
+
+<h1> &nbsp; <i class="fa fa-shopping-basket" aria-hidden="true"></i> Fruits</h1>
+<hr>
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+    {% for fruit in fruits %}
+    <div class="col">
+        <div class="card shadow-sm">
+            <a href=""><img src="{{fruit.image.url}}" class="d-block w-100" alt="..."/></a>
+            <div class="card-body">
+                <p class="card-text"><b>{{fruit.name}}</b></p>
+                <p class="card-text">{{fruit.desc}}</p>
+                <p class="card-text">Rs. {{fruit.price}} / kg</p>
+            </div>
+        </div>
+    </div>
+  {% endfor %}
+</div>
+
+<br>
+
+{% endblock main %}
