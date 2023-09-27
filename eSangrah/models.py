@@ -11,6 +11,23 @@ class Fruit(models.Model):
     price = models.FloatField(max_length=6)
     def __str__(self):
         return self.name
+    
+class Electronic(models.Model):
+    name = models.CharField(max_length=100)
+    image = models.ImageField(upload_to="fruits_img")
+    desc = models.CharField(max_length=100)
+    price = models.FloatField(max_length=6)
+    def __str__(self):
+        return self.name    
+
+class Prints(models.Model):
+    name = models.CharField(max_length=50)
+    phone = models.CharField(max_length=13)
+    desc = models.TextField()
+    file = models.FileField()
+    date = models.DateTimeField()
+    def __str__(self):
+        return f"Message form {self.name} on {self.date}"        
 
 class Product(models.Model):
     name = models.CharField(max_length=100)

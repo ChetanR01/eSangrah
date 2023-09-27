@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Product, Contact, Offer, Fruit
+from .models import Product, Contact, Offer, Fruit, Electronic, Prints
 from datetime import datetime
 from django.contrib.auth.models import User, auth 
 
@@ -13,6 +13,22 @@ def index(request):
 def fruits(request):
     fruits = Fruit.objects.all().order_by("-id")
     return render(request, 'fruits.html', {"fruits":fruits})
+
+def electronics(request):
+    electronics = Electronic.objects.all().order_by("-id")
+    return render(request, 'electronics.html', {"electronics":electronics})
+
+def prints(request):
+    if request.method=='POST':
+        name=request.POST['name']
+        phone=request.POST['phone']
+        desc=request.POST.get('desc')
+        file=request.POST('file')
+
+        print = Prints.objects.create(name=name, phone=phone, desc=desc, file=file, date=datetime.now())
+        print.save()
+        return redirect("/")
+    return render(request, 'prints.html')    
 
 def about(request):
     return render(request, 'about.html')

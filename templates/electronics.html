@@ -1,0 +1,23 @@
+{% extends "base.html" %} 
+{% block main %}
+
+<h3 class="my5"> &nbsp; <i class="fa fa-plug" aria-hidden="true"></i> Electronics</h3>
+
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+    {% for electronic in electronics %}
+    <div class="col">
+        <div class="card shadow-sm">
+            <a href=""><img src="{{electronic.image.url}}" class="d-block w-100" alt="..."/></a>
+            <div class="card-body">
+                <p class="card-text"><b>{{electronic.name}}</b></p>
+                <p class="card-text">{{electronic.desc}}</p>
+                <p class="card-text">Rs. {{electronic.price}}</p>
+            </div>
+        </div>
+    </div>
+  {% endfor %}
+</div>
+
+<br>
+
+{% endblock main %}
