@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Product, Contact, Offer, Fruit, Electronic, Prints
+from .models import Product, Contact, Offer, Fruit, Electronic, Xerox, DryFruit, Vegetable, DailyNeed, Stationary
 from datetime import datetime
 from django.contrib.auth.models import User, auth 
 
@@ -14,21 +14,37 @@ def fruits(request):
     fruits = Fruit.objects.all().order_by("-id")
     return render(request, 'fruits.html', {"fruits":fruits})
 
+def dryfruit(request):
+    dryfruits = DryFruit.objects.all().order_by("-id")
+    return render(request, 'dryfruit.html', {"dryfruits":dryfruits})
+
+def vegetable(request):
+    vegetables = Vegetable.objects.all().order_by("-id")
+    return render(request, 'vegetable.html', {"vegetables":vegetables})
+
+def dailyneed(request):
+    dailyneeds = DailyNeed.objects.all().order_by("-id")
+    return render(request, 'dailyneed.html', {"dailyneeds":dailyneeds})
+
 def electronics(request):
     electronics = Electronic.objects.all().order_by("-id")
     return render(request, 'electronics.html', {"electronics":electronics})
 
-def prints(request):
+def stationary(request):
+    stationarys = Stationary.objects.all().order_by("-id")
+    return render(request, 'stationary.html', {"stationarys":stationarys})
+
+def xerox(request):
     if request.method=='POST':
         name=request.POST['name']
         phone=request.POST['phone']
         desc=request.POST.get('desc')
-        file=request.POST('file')
+        file=request.POST['file']
 
-        print = Prints.objects.create(name=name, phone=phone, desc=desc, file=file, date=datetime.now())
-        print.save()
+        xeroxs = Xerox.objects.create(name=name, phone=phone, desc=desc, file=file, date=datetime.now())
+        xeroxs.save()
         return redirect("/")
-    return render(request, 'prints.html')    
+    return render(request, 'xerox.html')    
 
 def about(request):
     return render(request, 'about.html')

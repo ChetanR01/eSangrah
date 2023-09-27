@@ -12,22 +12,54 @@ class Fruit(models.Model):
     def __str__(self):
         return self.name
     
-class Electronic(models.Model):
+class DryFruit(models.Model):
     name = models.CharField(max_length=100)
-    image = models.ImageField(upload_to="fruits_img")
+    image = models.ImageField(upload_to="dryfruit_img")
+    desc = models.CharField(max_length=100)
+    price = models.FloatField(max_length=6)
+    def __str__(self):
+        return self.name    
+    
+class Vegetable(models.Model):
+    name = models.CharField(max_length=100)
+    image = models.ImageField(upload_to="vegetable_img")
     desc = models.CharField(max_length=100)
     price = models.FloatField(max_length=6)
     def __str__(self):
         return self.name    
 
-class Prints(models.Model):
+class DailyNeed(models.Model):
+    name = models.CharField(max_length=100)
+    image = models.ImageField(upload_to="dailyneed_img")
+    desc = models.CharField(max_length=100)
+    price = models.FloatField(max_length=6)
+    def __str__(self):
+        return self.name        
+
+class Electronic(models.Model):
+    name = models.CharField(max_length=100)
+    image = models.ImageField(upload_to="electronic_img")
+    desc = models.CharField(max_length=100)
+    price = models.FloatField(max_length=6)
+    def __str__(self):
+        return self.name   
+
+class Stationary(models.Model):
+    name = models.CharField(max_length=100)
+    image = models.ImageField(upload_to="stationary_img")
+    desc = models.CharField(max_length=100)
+    price = models.FloatField(max_length=6)
+    def __str__(self):
+        return self.name      
+
+class Xerox(models.Model):
     name = models.CharField(max_length=50)
     phone = models.CharField(max_length=13)
     desc = models.TextField()
-    file = models.FileField()
+    file = models.FileField(upload_to="document")
     date = models.DateTimeField()
     def __str__(self):
-        return f"Message form {self.name} on {self.date}"        
+        return self.name      
 
 class Product(models.Model):
     name = models.CharField(max_length=100)

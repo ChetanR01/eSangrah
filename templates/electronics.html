@@ -7,7 +7,7 @@
     {% for electronic in electronics %}
     <div class="col">
         <div class="card shadow-sm">
-            <a href=""><img src="{{electronic.image.url}}" class="d-block w-100" alt="..."/></a>
+            <a href=""><img src="{{electronic.image.url}}" class="d-block w-100" alt="..." height="210px"/></a>
             <div class="card-body">
                 <p class="card-text"><b>{{electronic.name}}</b></p>
                 <p class="card-text">{{electronic.desc}}</p>
@@ -17,7 +17,4 @@
     </div>
   {% endfor %}
 </div>
-
-<br>
-
 {% endblock main %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %} 
+{% block main %}
+
+<h3 class="my5"> &nbsp; <i class="fa fa-lemon-o " aria-hidden="true"></i> Dry Fruits</h3>
+
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+    {% for dryfruit in dryfruits %}
+    <div class="col">
+        <div class="card shadow-sm">
+            <a href=""><img src="{{dryfruit.image.url}}" class="d-block w-100" height="210px" alt="..."/></a>
+            <div class="card-body">
+                <p class="card-text"><b>{{dryfruit.name}}</b></p>
+                <p class="card-text">{{dryfruit.desc}}</p>
+                <p class="card-text">Rs. {{dryfruit.price}} / kg</p>
+            </div>
+        </div>
+    </div>
+  {% endfor %}
+</div>
+
+
+{% endblock main %}

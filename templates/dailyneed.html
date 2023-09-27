@@ -1,0 +1,21 @@
+{% extends "base.html" %} 
+{% block main %}
+
+<h3 class="my5"> &nbsp; <i class="fa fa-coffee" aria-hidden="true"></i> Daily Needs</h3>
+
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+    {% for dailyneed in dailyneeds %}
+    <div class="col">
+        <div class="card shadow-sm">
+            <a href=""><img src="{{dailyneed.image.url}}" class="d-block w-100" height="210px" alt="..."/></a>
+            <div class="card-body">
+                <p class="card-text"><b>{{dailyneed.name}}</b></p>
+                <p class="card-text">{{dailyneed.desc}}</p>
+                <p class="card-text">Rs. {{dailyneed.price}} / kg</p>
+            </div>
+        </div>
+    </div>
+  {% endfor %}
+</div>
+
+{% endblock main %}
