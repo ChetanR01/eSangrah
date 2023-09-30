@@ -10,16 +10,18 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>eSangrah</title>
+
 </head>
 
 <body style="background-color:rgb(189, 189, 189);">
-    <nav style="border-radius:0" class="navbar navbar-expand-lg sticky-top bg-body-tertiary bg-dark" >
+    <nav style="border-radius:0" class="navbar navbar-expand-lg sticky-top bg-body-tertiary bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand link-warning mx-4" href="/">eSangrah</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation" style="color: black;">
-                <span class="navbar-toggler-icon bg-white"><img src="/static/img/veg-logo.png" alt="" width="30px"></span>
+                aria-label="Toggle navigation" style="color:dark; border:none">
+                <span class="navbar-toggler-icon bg-white"><img src="/static/img/veg-logo.png" alt=""
+                        width="30px"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -51,6 +53,11 @@
                             <li><a class="dropdown-item" href="/contact">Ask for something else...</a></li>
                         </ul>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link link-light mx-2" href="/cart"><i style="font-size: 22px;"
+                                class="fa fa-shopping-cart" aria-hidden="true"></i>
+                        </a>
+                    </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link link-secondary mx-2" aria-disabled="true" href="/logout">Welcome,
@@ -66,7 +73,7 @@
                     {% endif %}
                 </ul>
                 <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Strickly Veg..." aria-label="Search">
+                    <input class="form-control me-2" type="search" placeholder="Strictly Veg..." aria-label="Search">
                     <button class="btn btn-outline-secondary" type="submit">Search</button>
                 </form>
             </div>
@@ -77,7 +84,6 @@
 
     <!-- Remove the container if you want to extend the Footer to full width. -->
     <div class=" my-3">
-
         <footer class="text-white text-center text-lg-start w-100" style="background-color: #23242a;">
             <!-- Grid container -->
             <div class="container p-1">
@@ -88,8 +94,7 @@
                         <h5 class="text-uppercase mb-4">About company</h5>
 
                         <p>
-                            At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
-                            voluptatum deleniti atque corrupti.
+                            Aim to provide each and every things to the customer available in the respective city...
                         </p>
                         <div class="mt-4">
                             <!-- Facebook -->
@@ -113,35 +118,23 @@
 
                     <!--Grid column-->
                     <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-                        <h5 class="text-uppercase mb-4 pb-1">Search something</h5>
-
-                        <div class="form-outline form-white mb-4">
-                            <input type="text" id="formControlLg" class="form-control form-control-lg">
-                            <label class="form-label" for="formControlLg" style="margin-left: 0px;">Search</label>
-                            <div class="form-notch">
-                                <div class="form-notch-leading" style="width: 9px;"></div>
-                                <div class="form-notch-middle" style="width: 48.8px;"></div>
-                                <div class="form-notch-trailing"></div>
-                            </div>
-                        </div>
 
                         <ul class="fa-ul" style="margin-left: 1.65em;">
                             <li class="mb-1">
-                                <span class="fa-li"><i class="fa fa-home"></i></span><span class="ms-2">New York, NY
-                                    10012, US</span>
+                                <span class="fa-li"><i class="fa fa-home"></i></span><span class="ms-2">Patel Nager,
+                                    Lonar, 443302</span>
                             </li>
                             <li class="mb-1">
                                 <span class="fa-li"><i class="fa fa-envelope"></i></span><span
-                                    class="ms-2">info@example.com</span>
+                                    class="ms-2">info@esangrah.com</span>
                             </li>
                             <li class="mb-1">
-                                <span class="fa-li"><i class="fa fa-phone"></i></span><span class="ms-2">+ 01 234 567
-                                    88</span>
+                                <span class="fa-li"><i class="fa fa-phone"></i></span><span class="ms-2">+91
+                                    8605377680</span>
                             </li>
-                            <li class="mb-1">
-                                <span class="fa-li"><i class="fa fa-print"></i></span><span class="ms-2">+ 01 234 567
-                                    89</span>
-                            </li>
+                            <!-- <li class="mb-1">
+                                <span class="fa-li"><i class="fa fa-print"></i></span><span class="ms-2">+91 7654321</span>
+                            </li> -->
                         </ul>
                     </div>
                     <!--Grid column-->
@@ -153,16 +146,16 @@
                         <table class="table text-center text-white">
                             <tbody class="font-weight-normal">
                                 <tr>
-                                    <td>Mon - Thu:</td>
-                                    <td>8am - 9pm</td>
-                                </tr>
-                                <tr>
-                                    <td>Fri - Sat:</td>
-                                    <td>8am - 1am</td>
+                                    <td>Mon - Sat:</td>
+                                    <td>24 Hours</td>
                                 </tr>
                                 <tr>
                                     <td>Sunday:</td>
-                                    <td>9am - 10pm</td>
+                                    <td>8am - 12pm</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>5pm - 8pm</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -181,23 +174,26 @@
             </div>
             <!-- Copyright -->
         </footer>
-
     </div>
     <!-- End of .container -->
-
-    <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
+    <script>
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })    
+    </script>
+
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     -->
 
-    
 </body>
 
 </html>

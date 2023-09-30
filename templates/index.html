@@ -24,60 +24,43 @@
         </button>
     </div>
 </div>
-<br>
-<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 my-1">
     {% for product in products %}
     <div class="col">
         <div class="card shadow-sm">
-            <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal"><img src="{{product.image.url}}"
-                    class="d-block w-100" height="210px" alt="..."></a>
+
+            <img src="{{product.image.url}}" class="d-block w-100" height="210px" alt="...">
             <div class="card-body">
-                <a id="myBtn">
-                    <p class="card-text"><b>{{product.name}}</b></p>
-                </a>
+                <p class="card-text"><b>{{product.name}}</b></p>
                 <p class="card-text">{{product.desc}}</p>
                 <p class="card-text">Rs. {{product.price}} / kg</p>
+                <button type="button" class="btn btn-success cart">Add To Cart</button>
+                <a style="color:blue" type="button" data-bs-toggle="tooltip" data-bs-placement="top"
+                    title="{{product.longdesc}}">
+                    &nbsp;&nbsp;&nbsp;&nbsp; Discription
+                </a>
             </div>
-
-
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Product</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-
-                        <div class="modal-body">
-                            <div><img src="{{product.image.url}}" class="d-block w-100" height="210px" alt="..." />
-                            </div>
-                            <div class="card-body">
-                                <p class="card-text"><b>{{product.name}}</b></p>
-                                <p class="card-text">{{product.desc}}</p>
-                                <p class="card-text">Rs. {{product.price}} / kg</p>
-                            </div>
-                        </div>
-
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
         </div>
     </div>
     {% endfor %}
 </div>
 
-<!-- Button trigger modal -->
-{% comment %} <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Launch demo modal
-</button> {% endcomment %}
-
 
 {% endblock main %}
+
+{% block js %}
+<script>
+    console.log("working");
+    if (localStorage.getItem('cart') == null) {
+        var cart = {};
+    }
+    else {
+        cart = JSON.parse(localStorage.getItem('cart'));
+    }
+
+    $('.cart').click(function () {
+        console.log('clicked');
+    });
+</script>
+
+{% endblock js %}

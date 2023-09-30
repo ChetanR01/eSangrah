@@ -47,7 +47,7 @@ class Electronic(models.Model):
 class Stationary(models.Model):
     name = models.CharField(max_length=100)
     image = models.ImageField(upload_to="stationary_img")
-    desc = models.CharField(max_length=100)
+    desc = models.CharField(max_length=20)
     price = models.FloatField(max_length=6)
     def __str__(self):
         return self.name      
@@ -62,9 +62,10 @@ class Xerox(models.Model):
         return self.name      
 
 class Product(models.Model):
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=10)
     image = models.ImageField(upload_to="products_img")
-    desc = models.CharField(max_length=100)
+    desc = models.CharField(max_length=20)
+    longdesc = models.CharField(max_length=300)
     price = models.FloatField(max_length=6)
     # product_id = models.CharField(max_length=100)
     def __str__(self):
